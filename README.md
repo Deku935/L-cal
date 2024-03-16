@@ -13,18 +13,31 @@ L-cal is not responsible for any inaccuracies or errors in the calculations of l
 # Tech-terms
 -----------------------------------------------------------------------
 // alert-primary -> blue
+
 // alert-success -> green
+
 // alert-danger  -> red
+
 // alert-warning -> yellow
+
 // alert-info    -> green+blue
 
+
 // #exclamation-triangle-fill
+
 // #info-fill
+
 // #check-circle-fill
 
+
 // db = dash board
+
 // nru = new reading unit
+
 // oru = old reading unit
+
 // ua = unit array
+
 // sup = single unit price
+
 // pa = price amount
