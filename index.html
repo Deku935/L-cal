@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Cal</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets\electrical-energy.png"/>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #c6e4f9;">
+        <div class="container-fluid">
+          <h2>Light Bill Calculator</h2>
+        </div>
+    </nav>
+    
+    <div id="info-tabs">
+        <div class="alert alert-info" role="alert">
+            <h5>Last Updated Info : Feb 2024</h5>
+            <span>Updated on : 27th Feb 2024 &nbsp;&nbsp;&nbsp; Light Bill Amount : 1450&#x20B9;</span>
+            <br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shop Name</th>
+                        <th>Old Readings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jockey</td>
+                        <td>1456 Units</td>
+                    <tr>
+                    <tr>
+                        <td>Electronics</td>
+                        <td>3374 Units</td>
+                    <tr>
+                    <tr>
+                        <td>Kidsware</td>
+                        <td>2294 Units</td>
+                    <tr>
+                    <tr>
+                        <td>Cloth</td>
+                        <td>7381 Units</td>
+                    <tr>       
+                <tbody>
+            </table>
+        </div>
+        <div class="alert alert-secondary" id="dash-board-id" role="alert">
+            <h5 id="db-title">Calculations to be done !!!</h5>
+            <span id="db-total-bill">Total Bill : 0000&#x20B9; &nbsp;&nbsp;&nbsp; </span>
+            <span id="db-sup"> Single Unit Price : 0000.00&#x20B9; </span>
+            <br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shop Name</th>
+                        <th>New Readings</th>
+                        <th>Old Readings</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jockey</td>
+                        <td id="db-nru-1">0000 Units</td>
+                        <td id="db-oru-1">0000 Units</td>
+                        <td id="db-ua-1">00 Units</td>
+                        <td id="db-pa-1">0000&#x20B9;</td>
+                    <tr>
+                    <tr>
+                        <td>Electronics</td>
+                        <td id="db-nru-2">0000 Units</td>
+                        <td id="db-oru-2">0000 Units</td>
+                        <td id="db-ua-2">00 Units</td>
+                        <td id="db-pa-2">0000&#x20B9;</td>
+                    <tr>
+                    <tr>
+                        <td>Kidsware</td>
+                        <td id="db-nru-3">0000 Units</td>
+                        <td id="db-oru-3">0000 Units</td>
+                        <td id="db-ua-3">00 Units</td>
+                        <td id="db-pa-3">0000&#x20B9;</td>
+                    <tr>
+                    <tr>
+                        <td>Cloth</td>
+                        <td id="db-nru-4">0000 Units</td>
+                        <td id="db-oru-4">0000 Units</td>
+                        <td id="db-ua-4">00 Units</td>
+                        <td id="db-pa-4">0000&#x20B9;</td>
+                    <tr>       
+                <tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="input-container">   
+        <div id="both-input-reading-div">
+            <div id="old-reading-div">
+                <h5>Old Reading Input:</h5>
+                <label for="OldShop1">Number 1: <input type="number" id="OldShop1" name="old-reading1" required></label>
+                <label for="OldShop2">Number 2: <input type="number" id="OldShop2" name="old-reading2" required></label>
+                <label for="OldShop3">Number 3: <input type="number" id="OldShop3" name="old-reading3" required></label>
+                <label for="OldShop4">Number 4: <input type="number" id="OldShop4" name="old-reading4" required></label>
+            </div>
+
+            <div id="new-reading-div">
+                <h5>New Reading Input:</h5>
+                <label for="NewShop1">Number 1: <input type="number" id="NewShop1" name="new-reading1" required></label>
+                <label for="NewShop2">Number 2: <input type="number" id="NewShop2" name="new-reading2" required></label>
+                <label for="NewShop3">Number 3: <input type="number" id="NewShop3" name="new-reading3" required></label>
+                <label for="NewShop4">Number 4: <input type="number" id="NewShop4" name="new-reading4" required></label>
+            </div>
+        </div>
+
+        <br>
+        <div id="bill-input-div">
+            <h5>Bill Amount:</h5>
+            <label for="BillAmount"> Amount: <input type="number" id="BillAmount" name="bill-amount" required></label>
+        </div>
+        <br>
+        <div id="buttons-id">
+            <button class="btn" id="btn-calculate" onclick="calculateBill()">Calculate</button>
+            <button class="btn" id="btn-reset" onclick="resetWindow()">Reset</button>
+        </div> 
+    </div>
+    <div id="warning-div">
+        <!-- SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+            <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </symbol>
+            <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+            </symbol>
+            <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </symbol>
+        </svg>
+
+        <div class="alert alert-info" id="info-section" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"><use xlink:href="#info-fill" id="alert-icon"/></svg>
+            <span id="info-text">Welcome to L-Cal, Instructions for using the calculator are provided below.</span>
+        </div>
+        <img src="assets/lightbulb.png" alt="">
+        <p class="copyright">
+            This free calculator helps you easily determine each share of the total bill based on individual meter readings. All you need to do is : <br><br>
+            1. Enter the current and previous meter readings for the shared meter. <br>
+            2. Enter the light bill amount. <br>
+            3. Click "Calculate" and see a breakdown of each light bill portion. <br><br>
+            
+            L-cal is not responsible for any inaccuracies or errors in the calculations of light bill provided on this website. <b> &copy;  <script>document.write(new Date().getFullYear())</script> L-cal. All rights reserved.</b>
+        </p>
+    </div>
+
+    <!-- POP UP DIV -->
+    <div id="my-custom-popup" class="alert alert-warning hidden-popup">
+        <div id="popup-navbar">
+            <h5>There are a few errors in your input. We've highlighted them for you to fix easily.</h5>
+            <svg id="popup-svg-id" onclick="closeInfoWindow()" height="25px" id="Layer_1" style="enable-background:new 0 0 90 90;" version="1.1" viewBox="0 0 512 512" width="25px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+        </div><br>
+        <p id="popup-message-id"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

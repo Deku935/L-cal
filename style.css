@@ -1,0 +1,220 @@
+body{
+    margin: 0;
+    overflow-x: hidden;
+    padding: 10px 10px;
+}
+
+
+/* NAVBAR */
+.container-fluid h2{
+    color: rgb(30, 115, 152);
+}
+
+
+/* INFO STYLES */
+#info-tabs{
+    position: relative;
+    display: flex;
+    gap: 1em;
+    top: 10px;
+}
+
+.alert{
+    width: 40em;
+    height: auto;
+}
+
+.alert-secondary{
+    flex-grow: 1;
+}
+
+/*TABLE */
+table {
+    width: 100%;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+
+/* INPUT AREA */
+#old-reading-div, #new-reading-div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+#both-input-reading-div{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 43%;
+    top: 15px;
+    
+}
+  
+.input-container label {
+    margin-bottom: 5px;
+}
+
+#OldShop1, #OldShop2, #OldShop3, #OldShop4,#NewShop1, #NewShop2, #NewShop3, #NewShop4{
+    margin-bottom: 3px;
+}
+
+#buttons-id{
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.btn{
+    color: rgb(79, 152, 30);
+    border: 1.5px solid rgb(79, 152, 30);
+    background-color: #c6f9c8;
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active {  
+    animation: button-pulse 0.5s ease-in-out;
+}
+
+@keyframes button-pulse {
+    0% {
+      transform: scale(1); 
+    }
+    50% {
+      transform: scale(1.1); 
+    }
+    100% {
+      transform: scale(1); 
+    }
+}
+
+.btn:hover{  
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+}
+
+#btn-reset{
+    color: rgb(152, 30, 30);
+    background-color: #f9c6c6;
+    border: 1.5px solid rgb(152, 30, 30);
+}
+
+/* DASHBOARD */
+/* BORDER ANIMATION CLASS GREEN */
+.animated-border-green {
+    border: 1px solid #0ff129;
+    animation: border-animation-green 1s ease-in-out;
+}
+
+@keyframes border-animation-green {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #03c627;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+/* BORDER ANIMATION CLASS RED */
+.animated-border-red {
+    border: 1px solid #f10f0f;
+    animation: border-animation-red 1s ease-in-out;
+}
+
+@keyframes border-animation-red {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #c60303;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+/* INFO DIV */
+#warning-div{
+    position: absolute;
+    top: 52%;
+    width: 56%;
+    height: 30%;
+    right: 10px;
+}
+
+#info-section{
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+#warning-div img{
+    position: fixed;
+    opacity: 0.7; 
+    height: 30vh;
+    z-index: -1;
+}
+
+#error-info-details, #success-copy-result{
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(49, 49, 149); 
+    cursor: pointer;
+}
+
+/* COPYRIGHT */
+.copyright{
+    position: relative;
+    height: auto;
+    width: 70%;
+    top: 10%;
+    left: 30%;
+}
+
+/* POP UP CSS */
+#my-custom-popup {
+    padding: 10px; 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb(168, 168, 5);
+    width: auto;
+    transition: 0.5 linear ease-out;
+}
+  
+#popup-navbar{
+    position: relative;
+    display: flex;
+} 
+
+.hidden-popup{
+    display: none;
+}
+
+/* CLOSE BUTTON */
+#popup-svg-id{
+    fill :rgb(117, 117, 7);
+    position: relative;
+}
+#popup-svg-id:hover{
+    fill :rgb(73, 73, 4);
+    cursor: pointer;
+}
+
+#popup-svg-id:active {
+    animation: button-pulse 0.5s ease-in-out;
+}
+  
